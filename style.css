@@ -56,6 +56,21 @@ a {
   color: var(--white);
 }
 
+.chevron-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.chevron-container:hover {
+  transform: translateX(5px);
+}
+
+.fa-chevron-right {
+  font-size: 0.5rem;
+  /* vertical-align: middle; */
+  }
 
 /* navbar */
 
