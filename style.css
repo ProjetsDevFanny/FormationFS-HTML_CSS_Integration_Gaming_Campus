@@ -4,7 +4,7 @@
 
 :root {
   --black-nuance: rgb(22, 22, 22);
-  --white-nuance: rgb(236, 235, 235);
+  --white: rgb(255, 255, 255);
 }
 
 * {
@@ -26,13 +26,13 @@ body {
   font-style: normal;
 }
 
-/* header => nav */
+/* navbar */
 
 nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1rem;
+  
 }
 
 nav {
@@ -63,6 +63,7 @@ nav a:hover {
 
 nav button {
   text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
   font-size: 0.7rem;
   font-weight: 700;
   border-radius: 15px;
@@ -95,5 +96,70 @@ nav button:hover {
 
 .navbar-link:hover .underline-effect {
   background: purple; /* devient visible au survol du parent */
+}
+
+/* header */
+
+.presentation {
+  background-image: url(assets/img/bg.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center 100%; /* centre horizontalement, colle en haut verticalement */
+  background-repeat: no-repeat;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.presentation-container {
+  flex-direction: column;
+  height: 40vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo-gc-home {
+  height: 28vh;
+}
+
+.presentation-container h1 {
+  color: var(--white);
+  font-size: calc(1.1vw + 0.4rem);
+  font-weight: 550;
+  text-transform: uppercase;
+}
+
+.presentation-container button {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background-color: transparent;  
+  color: var(--white);
+  border: 0.5px solid var(--white);
+  padding: 10px 20px;
+}
+
+
+/* main, section: intro */
+
+.intro {
+  background-color: var(--white);
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro p {
+  font-size: calc(0.5vw + 0.4rem);
+  font-weight: 700;
+  text-align: center;
+  width: 60%;
+ 
+
 }
 
