@@ -5,6 +5,7 @@
 :root {
   --black-nuance: rgb(22, 22, 22);
   --white: rgb(255, 255, 255);
+  --purple: rgb(128, 0, 128);
 }
 
 * {
@@ -14,11 +15,6 @@
   box-sizing: border-box;
 }
 
-a {
-  text-decoration: none;
-  color: var(--black-nuance);
-}
-
 body {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
@@ -26,13 +22,48 @@ body {
   font-style: normal;
 }
 
+a {
+  text-decoration: none;
+  color: var(--black-nuance);
+}
+
+.button-style {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background-color: transparent;
+  color: var(--white);
+  border: 0.5px solid var(--white);
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button-style:hover {
+  background-color: var(--white);
+  color: var(--black-nuance);
+}
+
+.button-style-news {
+  border: 0.5px solid var(--black-nuance);
+  color: var(--black-nuance);
+}
+
+.button-style-news:hover {
+  background-color: var(--black-nuance);
+  color: var(--white);
+}
+
+
 /* navbar */
 
 nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
 }
 
 nav {
@@ -57,11 +88,11 @@ nav button-border {
 }
 
 nav a:hover {
-  color: purple;
-  
+  color: var(--purple);
+
 }
 
-nav button {
+#language {
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
   font-size: 0.7rem;
@@ -74,11 +105,11 @@ nav button {
   padding-block: 0px;
   padding-inline: 0px;
   padding: 5px 10px;
- }
+}
 
-nav button:hover {
+#language:hover {
   cursor: pointer;
-  background:  rgb(247, 246, 246);
+  background: rgb(247, 246, 246);
 }
 
 .nav-link {
@@ -90,12 +121,14 @@ nav button:hover {
 .underline-effect {
   width: 100%;
   height: 3px;
-  background: transparent; /* invisible par défaut */
+  background: transparent;
+  /* invisible par défaut */
   transition: background 0.3s ease;
 }
 
 .navbar-link:hover .underline-effect {
-  background: purple; /* devient visible au survol du parent */
+  background: var(--purple);
+  /* devient visible au survol du parent */
 }
 
 /* header */
@@ -104,7 +137,8 @@ nav button:hover {
   background-image: url(assets/img/bg.jpg);
   background-attachment: fixed;
   background-size: cover;
-  background-position: center 100%; /* centre horizontalement, colle en haut verticalement */
+  background-position: center 100%;
+  /* centre horizontalement, colle en haut verticalement */
   background-repeat: no-repeat;
   height: 60vh;
   display: flex;
@@ -119,7 +153,7 @@ nav button:hover {
   align-items: center;
   height: 100%;
   gap: 1.5rem;
- }
+}
 
 
 #logo-gc-home {
@@ -131,25 +165,6 @@ nav button:hover {
   font-size: calc(1.1vw + 0.4rem);
   font-weight: 550;
   text-transform: uppercase;
-}
-
-.presentation-container button {
-  font-family: "Montserrat", sans-serif;
-  text-transform: uppercase;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-  background-color: transparent;  
-  color: var(--white);
-  border: 0.5px solid var(--white);
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.presentation-container button:hover {
-  background-color: var(--white);
-  color: var(--black-nuance);
 }
 
 
@@ -166,19 +181,20 @@ nav button:hover {
 .intro p {
   font-size: calc(0.5vw + 0.4rem);
   font-weight: 700;
+  line-height: 1.5;
   text-align: center;
   width: 60%;
- }
+}
 
- /* main, section: activities */
+/* main, section: activities */
 
- .activities {
+.activities {
   background-color: var(--black-nuance);
-  padding: 3rem 0;
+  padding: 4rem 0;
   width: 100%;
- }
+}
 
- .activities-container {
+.activities-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -188,14 +204,14 @@ nav button:hover {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
- }
+}
 
 .activity-part {
   color: var(--white);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
   width: 300px;
   flex: 0 0 auto;
 }
@@ -215,7 +231,7 @@ nav button:hover {
 .activity-part p {
   text-align: center;
   font-size: 0.9rem;
-  line-height: 1.5;
+  line-height: 1.1;
 }
 
 .activity-part button {
@@ -223,7 +239,7 @@ nav button:hover {
   color: var(--white);
   border: 1px solid var(--white);
   padding: 8px 16px;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -238,33 +254,87 @@ nav button:hover {
 
 .events {
   background-color: rgb(249, 244, 244);
-  padding: 3rem 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-}
-
-.news {
+  min-height: 60vh;
   display: grid;
-  grid-template-columns: 70% 30%;
+  justify-content: center;  
+  /* align-items: start
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 15% 1fr 15%;
+   */
+  padding: 5rem 30px;
+  column-gap: 100px;
+  row-gap: 30px;
+  grid-template-areas: 
+  "news news newsroom"
+  "event1 event2 event3"
+  "inscrip suite1 suite2";
 }
 
-.events-details {
+.news-left {
+  grid-area: news;
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  flex-direction: column;
   align-items: flex-start;
-  gap: 1rem;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
 }
- 
 
-.event-part { 
+.news-left h2 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 450;
+  letter-spacing: 2px;
+}
+
+.news-left p {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.news-right {
+  grid-area: newsroom;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
+
+.event-part-left {
+  grid-area: event1;
+}
+
+.event-part-middle {
+  grid-area: event2;
+}
+
+.event-part-right {
+  grid-area: event3;
+} 
+
+.link-left {  
+  grid-area: inscrip;
+}
+
+.link-middle {
+  grid-area: suite1;
+}
+
+.link-right {
+  grid-area: suite2;
+}
+
+.link-left a, .link-middle a, .link-right a {
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 2px;  
+  color: var(--purple);
+}
+
+.event-part {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -274,13 +344,14 @@ nav button:hover {
 }
 
 .event-part img {
+  border-radius: 5px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
   width: 100%;
   height: auto;
 }
 
 .event-part p {
-  font-size: 0.9rem;
-  line-height: 1.5;
+  font-size: 0.8rem;
+  font-weight: 600;
 }
-
 
