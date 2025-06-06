@@ -183,7 +183,7 @@ nav a:hover {
 
 .intro {
   background-color: var(--white);
-  height: 20vh;
+  height: 15vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -194,7 +194,7 @@ nav a:hover {
   font-weight: 700;
   line-height: 1.5;
   text-align: center;
-  width: 60%;
+  width: 55%;
 }
 
 /* main, section: activities */
@@ -379,7 +379,7 @@ nav a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 4rem 0;
+  padding: 4rem 0rem 2rem 0rem;
   width: 100%;
   row-gap: 4rem;
 }
@@ -491,5 +491,97 @@ nav a:hover {
 
 .press {
   display: grid;
-  grid-template-columns: 30% 70%;
+  grid-template-columns: 25% 75%;
+  width: 980px;
+  margin: 0 auto;
+  border-top: 1px solid rgb(222, 221, 221);
+  padding-top: 2rem;
+}
+
+.press-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.8rem;
+ }
+
+ .press-left h5 {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+  /* letter-spacing: 1px; */
+ }
+
+.press-left p {
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.press-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.press-right ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Centrer les images dans leur boite */
+.press-right ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.press-right ul li img {
+  max-width: 100px;
+}
+
+.footer-partners {
+  background-color: var(--black-nuance);
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+
+ .footer-partners h5 {
+  text-align: center;
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+ }
+
+.partners {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.partners-logos ul {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.partners ul li img {
+  max-width: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
