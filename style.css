@@ -645,7 +645,7 @@ nav a:hover {
   }
 
   .activities {
-    padding: 1rem;
+    padding: 2rem 1rem;
   }
 
 .activities-container {
@@ -664,11 +664,25 @@ nav a:hover {
   font-size: 0.8rem;
 }
 
-
-
-
+.events {
+  padding: 2rem 0;
+  column-gap: 3rem;
+  row-gap: 2rem;
 }
 
+.event-part {
+  width: 25vw;
+}
+
+.news-left, .news-right {
+  margin-bottom: 0;
+}
+
+.news-left {
+  width: 50vw;
+}
+
+}
 /* Pour les très petits téléphones */
 @media (max-width: 400px) {
 
