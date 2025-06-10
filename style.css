@@ -753,32 +753,161 @@ nav a:hover {
   .partners ul li img {
     max-width: 50px;
   }
-
-
-
-
-
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
 
 /* Pour les très petits téléphones */
-@media (max-width: 400px) {}
+@media (max-width: 400px) {
+  .nav-link {
+    flex-direction: column;
+    height: auto;
+    /* gap: 0.5rem; */
+  }
+
+  nav {
+    gap: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0.5rem;
+  }
+
+  .nav-link {
+    align-items: flex-start;
+  }
+
+  .nav-link a {
+    font-size: 0.7rem;
+    color: var(--white);
+    height: 4vh;
+  }
+
+  #language {
+    font-size: 0.7rem;
+    height: 3vh;
+    padding: 0rem 0.4rem;
+    margin-top: 0.5rem;
+  }
+
+  .presentation {
+    position: relative;
+  }
+
+
+  .presentation-container h1 {
+    font-size: 0.8rem;
+  }
+
+  .intro p {
+    font-size: 0.6rem;
+  }
+
+  .activities {
+    padding-bottom: 3rem;
+  }
+
+  .activities-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 100%;
+  height: 100%; */
+    /* object-fit: cover; */
+  }
+
+  #logo-ga {
+    padding-top: 2rem;     /* Ajustement car les images GBS home et GG home fournies n'ont pas été bien centrées */
+
+  }
+
+  .activity-part img {
+    width: 70vw;
+  }
+
+  .activity-part {
+    width: 70vw;
+  }
+.events {
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  height: 280vh;
+  padding: 2rem 30px;
+  /* column-gap: 100px; */
+  /* row-gap: 10px; */
+grid-template-columns: 1fr;
+grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; /* 6 lignes */
+grid-template-areas:
+"news"
+"newsroom"
+"event1"
+"inscrip"
+"event2"
+"suite1"
+"event3"
+"suite2";
+}
+
+.news-left {
+  width: 100%;
+  text-align: center;
+}
+
+ .news-right {
+   align-items: center;
+}
+
+.link-right {
+  padding-top: 2rem;  
+}
+
+.chevron-container {
+  justify-content: center;
+}
+
+.event-part {
+  width: 100%;
+  text-align: center;
+ }
+
+ .links {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+ }
+
+
+
+.press ul {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem 1rem 0rem 1rem;
+}
+
+.partners-logos ul {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1.5rem 1rem 1rem 1rem;
+}
+
+
+
+
+
+}
