@@ -4,7 +4,7 @@
 
 :root {
   --black-nuance: rgb(22, 22, 22);
-  --white: rgb(255, 255, 255);
+  --white: rgb(243, 239, 239);
   --purple: rgb(128, 0, 128);
 }
 
@@ -13,13 +13,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+}
+
+body {
+  margin: 0 auto;
 }
 
 a {
@@ -79,6 +80,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   max-width: 70vw;
+  /* Pour empêcher les élements de trop s'étendre */
   gap: 1rem;
 }
 
@@ -121,9 +123,9 @@ nav a:hover {
   display: flex;
   align-items: center;
   flex-direction: column;
-
 }
 
+/* =====================Méthode avec la création d'une div au dessus de l'élément====================================*/
 .underline-effect {
   width: 100%;
   height: 3px;
@@ -136,6 +138,41 @@ nav a:hover {
   background: var(--purple);
   /* devient visible au survol du parent */
 }
+
+/*================ Méthode avec la création d'un Before sur un élément "li" ========================================*/
+
+/* nav li {
+  position: relative;
+  transition: color 0.3s ease;
+  padding: 20px 0;
+  }
+
+  nav li: first-child {
+    color: var(--purple);
+  }
+
+  nav li:first-child::before {
+    content: "";
+    position: absolute;   
+    width: 100%;
+    height: 5px;
+    background: var(--purple);
+    transform: translateY(-20px);
+  }
+  
+  nav li:hover::before {
+    content: "";
+    position: absolute;   
+    width: 100%;
+    height: 5px;
+    background: var(--purple);
+    transform: translateY(-20px);
+}
+
+/* Pour enlever le Before sur le dernier élément */
+/* nav li: last-child::before {
+    background: transparent;
+}  */
 
 .navbar-link {
   margin: 0 1rem;
@@ -593,105 +630,9 @@ nav a:hover {
 
 /* ========================== Médias queries ========================== */
 
-/* Styles par défaut = desktop (écrans larges) */
-
-
-/* Tablette (769px à 1024px) */
-@media (max-width: 1024px) {
-  .navbar-link a {
-    font-size: 0.7rem;
-  }
-
-  #logo-gc-home {
-    height: 30vh;
-  }
-
-  .presentation-container h1 {
-    font-size: 1.5rem;
-  }
-
-  .intro {
-    height: 10vh;
-  }
-
-  .intro p {
-    font-size: 0.8rem;
-  }
-}
-
-/* Mobile (768px et moins) */
-@media (max-width: 768px) {
-  .nav-link {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    height: 6vh;
-  }
-
+@media (max-width: 1530px) {
   nav {
-    padding: 0;
-    justify-content: space-around;
-    max-width: 100vw;
-
-  }
-
-  .navbar-link {
-    margin: 0;
-  }
-
-  .nav-link a {
-    font-size: 0.6rem;
-    margin: 0;
-
-  }
-
-  .activities {
-    padding: 2rem 1rem;
-  }
-
-  .activities-container {
-    gap: 1.3rem;
-  }
-
-  .activity-part {
-    width: 30vw;
-  }
-
-  .activity-part h3 {
-    font-size: 1rem;
-  }
-
-  .activity-part p {
-    font-size: 0.8rem;
-  }
-
-  .intro p {
-    width: 80%;
-  }
-
-  .events {
-    padding: 2rem 0;
-    column-gap: 3rem;
-    row-gap: 2rem;
-  }
-
-  .event-part {
-    width: 25vw;
-  }
-
-  .news-left,
-  .news-right {
-    margin-bottom: 0;
-  }
-
-  .news-left {
-    width: 50vw;
-  }
-
-  .footer-main {
-    padding: 2rem 0;
-    row-gap: 2rem;
+    max-width: 100%;
   }
 
   .links {
@@ -721,6 +662,26 @@ nav a:hover {
   #contact {
     align-items: center;
   }
+}
+
+@media (max-width: 1095px) {
+  .nav-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 6vh;
+  }
+
+  nav {
+    padding: 0;
+    justify-content: space-around;
+    max-width: 100vw;
+  }
+
+  .navbar-link {
+    margin: 0;
+  }
 
   .press {
     display: flex;
@@ -745,6 +706,106 @@ nav a:hover {
     font-size: 0.6rem;
     font-weight: 700;
   }
+}
+
+@media (max-width: 1065px) {
+  .activities {
+    padding: 2rem 1rem;
+  }
+
+  .activities-container {
+    gap: 1.3rem;
+  }
+
+  .activity-part {
+    width: 30vw;
+  }
+
+  .activity-part h3 {
+    font-size: 1rem;
+  }
+
+  .activity-part p {
+    font-size: 0.8rem;
+  }
+}
+
+
+/* Tablette (769px à 1024px) */
+@media (max-width: 1024px) {
+  .navbar-link a {
+    font-size: 0.7rem;
+  }
+
+  #logo-gc-home {
+    height: 30vh;
+  }
+
+  .presentation-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .intro {
+    height: 10vh;
+  }
+
+  .intro p {
+    font-size: 0.9rem;
+    width: 80%; 
+  }
+
+  .events {
+    padding: 2rem 0;
+    column-gap: 3rem;
+    row-gap: 2rem;
+  }
+
+  .event-part {
+    width: 25vw;
+  }
+
+  .news-left,
+  .news-right {
+    margin-bottom: 0;
+  }
+
+  .news-left {
+    width: 50vw;
+  }
+}
+
+/* Mobile (768px et moins) */
+@media (max-width: 768px) {
+  .navbar-link {
+    margin: 0;
+  }
+
+  .nav-link a {
+    font-size: 0.6rem;
+    margin: 0;
+  }
+
+  .intro p {
+    width: 80%;
+  }
+
+  .footer-main {
+    padding: 2rem 0;
+    row-gap: 2rem;
+  }
+
+  .press-right ul {
+    flex-wrap: wrap;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .press-right ul li {
+    flex: 0 0 calc(50% - 1rem);
+    /* pour que chaque élément prenne 50% de la largeur moins l'espace du gap */
+    display: flex;
+    justify-content: center;
+  }
 
   .partners-logos ul {
     gap: 1.2rem;
@@ -755,9 +816,15 @@ nav a:hover {
   }
 }
 
+@media (max-width: 690px) {
+  .presentation-container h1 {
+    font-size: 1rem;
+  }
 
-/* Pour les très petits téléphones */
-@media (max-width: 400px) {
+  .presentation-container h1 {
+    font-size: 1.2rem;
+  }
+
   .nav-link {
     flex-direction: column;
     height: auto;
@@ -791,19 +858,52 @@ nav a:hover {
     margin-top: 0.5rem;
   }
 
-  .presentation {
-    position: relative;
+  .events {
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    gap: 2rem;
+    max-height: 320vh;
+    padding: 2rem 30px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    /* 6 lignes */
+    grid-template-areas:
+      "news"
+      "newsroom"
+      "event1"
+      "inscrip"
+      "event2"
+      "suite1"
+      "event3"
+      "suite2";
   }
 
-
-  .presentation-container h1 {
-    font-size: 0.8rem;
+  .news-left {
+    width: 100%;
+    text-align: center;
+    align-items: center;
   }
 
-  .intro p {
-    font-size: 0.6rem;
+  .news-right {
+    align-items: center;
   }
 
+  .events {
+    height: 280vh;
+  }
+
+  .event-part {
+    width: 80%;
+    text-align: center;
+  }
+
+  .event-part h4 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
   .activities {
     padding-bottom: 3rem;
   }
@@ -819,14 +919,11 @@ nav a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* width: 100%;
-  height: 100%; */
-    /* object-fit: cover; */
   }
 
   #logo-ga {
-    padding-top: 2rem;     /* Ajustement car les images GBS home et GG home fournies n'ont pas été bien centrées */
-
+    padding-top: 2rem;
+    /* Ajustement car les images GBS home et GG home fournies n'ont pas été bien centrées */
   }
 
   .activity-part img {
@@ -836,78 +933,95 @@ nav a:hover {
   .activity-part {
     width: 70vw;
   }
-.events {
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  height: 280vh;
-  padding: 2rem 30px;
-  /* column-gap: 100px; */
-  /* row-gap: 10px; */
-grid-template-columns: 1fr;
-grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; /* 6 lignes */
-grid-template-areas:
-"news"
-"newsroom"
-"event1"
-"inscrip"
-"event2"
-"suite1"
-"event3"
-"suite2";
+
+  .event-part h4 {
+    font-size: 1.2rem;
+  }
+
+  .partners-logos ul {
+    gap: 1rem;
+  }
 }
 
-.news-left {
-  width: 100%;
-  text-align: center;
+@media (max-width: 500px) {
+  #logo-gc-home {
+    height: 30vh;
+  }
+
+  .presentation-container h1 {
+    font-size: 1rem;
+  }
 }
 
- .news-right {
-   align-items: center;
+/* Pour les très petits téléphones */
+@media (max-width: 450px) {
+  .presentation {
+    position: relative;
+    height: 60vh;
+    padding-bottom: 1rem;
+  }
+
+.presentation-container {
+  justify-content: flex-end;
+  gap: 1.5rem;
 }
 
-.link-right {
-  padding-top: 2rem;  
-}
+  #logo-gc-home {
+    height: 20vh;
+  }
 
-.chevron-container {
-  justify-content: center;
-}
+  .presentation-container h1 {
+    font-size: 0.8rem;
+  }
 
-.event-part {
-  width: 100%;
-  text-align: center;
- }
+  .intro p {
+    font-size: 0.6rem;
+  }
 
- .links {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 3rem;
- }
+  .events {
+    gap: 0.5rem;
+    padding: 2rem 30px;
+    }  
 
+  .news-left {
+    width: 100%;
+    text-align: center;
+  }
 
+  .news-right {
+    align-items: center;
+    }
 
-.press ul {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  width: 100%;
-  padding: 1rem 1rem 0rem 1rem;
-}
+  .link-right {
+    padding: 2rem 0 1rem 0;
+  }
 
-.partners-logos ul {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  width: 100%;
-  padding: 1.5rem 1rem 1rem 1rem;
-}
+  .chevron-container {
+    justify-content: center;
+  }
 
+  .links {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+  }
 
+  .press ul {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem 1rem 0rem 1rem;
+  }
 
-
-
+  .partners-logos ul {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 1.5rem 1rem 1rem 1rem;
+  }
 }
