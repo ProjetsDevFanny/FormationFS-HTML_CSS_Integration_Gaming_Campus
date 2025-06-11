@@ -2,6 +2,16 @@
 
 Intégration d'une maquette professionnelle pour Gaming Campus en HTML et CSS.
 
+## Captures d'écran
+
+### Version Desktop
+
+![Version Desktop](Screenshot-ecranPC.png)
+
+### Version Mobile
+
+![Version Mobile](Screenshot-mobile.png)
+
 ## Technologies Utilisées
 
 - HTML5

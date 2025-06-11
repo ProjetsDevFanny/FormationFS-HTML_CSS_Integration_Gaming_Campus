@@ -31,7 +31,7 @@ a {
 .button-style {
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 2px;
   background-color: transparent;
@@ -64,12 +64,15 @@ a {
   transition: transform 0.3s ease;
 }
 
+/* Autre méthode pour bouger le chevron à droite: 
+i { transform: translateX(5px); } */
+
 .chevron-container:hover {
   transform: translateX(5px);
 }
 
 .fa-chevron-right {
-  font-size: 0.5rem;
+  font-size: 0.7rem;
   /* vertical-align: middle; */
 }
 
@@ -79,7 +82,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 70vw;
+  /* max-width: 70vw; */
   /* Pour empêcher les élements de trop s'étendre */
   gap: 1rem;
 }
@@ -119,13 +122,22 @@ nav a:hover {
   background: rgb(247, 246, 246);
 }
 
+/* =====================Méthode avec la création d'une div (ligne au dessus du lien a) ====================================*/
+
+/* la nav + le bouton language */
 .nav-link {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-/* =====================Méthode avec la création d'une div au dessus de l'élément====================================*/
+/* La div underline-effect + le lien a  */
+.navbar-link {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1rem;
+}
+
 .underline-effect {
   width: 100%;
   height: 3px;
@@ -134,10 +146,16 @@ nav a:hover {
   transition: background 0.3s ease;
 }
 
+.navbar-link a {
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
 .navbar-link:hover .underline-effect {
   background: var(--purple);
   /* devient visible au survol du parent */
 }
+
 
 /*================ Méthode avec la création d'un Before sur un élément "li" ========================================*/
 
@@ -174,14 +192,6 @@ nav a:hover {
     background: transparent;
 }  */
 
-.navbar-link {
-  margin: 0 1rem;
-}
-
-.navbar-link a {
-  font-size: 0.8rem;
-  white-space: nowrap;
-}
 
 /* header */
 
@@ -192,7 +202,7 @@ nav a:hover {
   background-position: center 60%;
   /* centre horizontalement, colle en haut verticalement */
   background-repeat: no-repeat;
-  height: 80vh;
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -203,17 +213,33 @@ nav a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* padding-top: 6rem; */
   height: 100%;
   gap: 2.5rem;
+  width: 100%;
 }
 
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  /* padding: 1rem 0; */
+}
+
+/* taille logo s'adapte à la largeur de l'écran */
 #logo-gc-home {
-  height: 40vh;
+  height: auto;
+  width: 100%;
+  max-width: 700px;
+  min-width: 300px;
+  object-fit: contain;
 }
 
 .presentation-container h1 {
   color: var(--white);
-  font-size: calc(1.1vw + 0.3rem);
+  font-size: calc(1vw + 0.5rem);
   font-weight: 500;
   text-transform: uppercase;
 }
@@ -229,11 +255,14 @@ nav a:hover {
 }
 
 .intro p {
-  font-size: calc(0.5vw + 0.3rem);
-  font-weight: 700;
+  font-size: calc(0.6vw + 0.5rem);
+  /* Fluidité:  0.6% de la largeur de la fenêtre (viewport width) = Plus l'écran est large, plus cette valeur augmente.
+  + lisibilité minimale: 0.3rem = Valeur fixe ajoutée pour éviter que le texte soit trop petit. */
+  font-weight: 550;
   line-height: 1.5;
   text-align: center;
-  width: 50%;
+  width: 60%;
+  padding: 1rem 0;
 }
 
 /* main, section: activities */
@@ -402,10 +431,29 @@ nav a:hover {
   height: auto;
 }
 
-.event-part p {
-  font-size: 0.8rem;
+.event-part h4 {
+  font-size: 1rem;
   font-weight: 600;
 }
+
+.event-part p {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+/* Autre méthode pour mettre les 3 éléments en bas (inscription, suite1, suite2):
+.links (= inscription, suite1, suite2) {
+text-align: left;
+position: absolute;
+bottom: 0;
+
+> Les parents doivent être positionnés en relative et ils doivent avoir la même hauteur.
+ */
+
+ /* A savoir : pour pointer toutes les 1ères div d'un parent:
+ .parent-element > div { }
+ uniquement la 1ère div : .parent-element > div:first-child { }
+ */
+
 
 /* footer */
 
@@ -429,9 +477,9 @@ nav a:hover {
   justify-content: center;
   align-items: flex-start;
   gap: 5rem;
-  width: 60%;
-  max-width: 1200px;
-  margin: 0 auto;
+  /* width: 60%; */
+  max-width: 1200px; /* pour éviter que les éléments s'étendent trop */
+  margin: 0 auto; /* pour centrer horizontalement */
   padding: 0 5rem;
   flex-wrap: wrap;
 }
@@ -535,6 +583,7 @@ nav a:hover {
   width: 980px;
   margin: 0 auto;
   border-top: 1px solid rgb(222, 221, 221);
+  /* OU faire un ::before en position absolute (ou  ::after à la div précédente) */
   padding-top: 2rem;
 }
 
@@ -630,7 +679,7 @@ nav a:hover {
 
 /* ========================== Médias queries ========================== */
 
-@media (max-width: 1530px) {
+@media (max-width: 1200px) {
   nav {
     max-width: 100%;
   }
@@ -663,6 +712,8 @@ nav a:hover {
     align-items: center;
   }
 }
+
+
 
 @media (max-width: 1095px) {
   .nav-link {
@@ -737,23 +788,6 @@ nav a:hover {
     font-size: 0.7rem;
   }
 
-  #logo-gc-home {
-    height: 30vh;
-  }
-
-  .presentation-container h1 {
-    font-size: 1.5rem;
-  }
-
-  .intro {
-    height: 10vh;
-  }
-
-  .intro p {
-    font-size: 0.9rem;
-    width: 80%; 
-  }
-
   .events {
     padding: 2rem 0;
     column-gap: 3rem;
@@ -785,9 +819,9 @@ nav a:hover {
     margin: 0;
   }
 
-  .intro p {
-    width: 80%;
-  }
+  /* #logo-gc-home {
+    height: 35vh;
+  } */
 
   .footer-main {
     padding: 2rem 0;
@@ -890,7 +924,7 @@ nav a:hover {
   }
 
   .events {
-    height: 280vh;
+    max-height: 280vh;
   }
 
   .event-part {
@@ -902,6 +936,12 @@ nav a:hover {
     font-size: 1.5rem;
   }
 }
+
+/* @media (max-width: 660px) {
+  #logo-gc-home {
+    height: 25vh;
+  }
+} */
 
 @media (max-width: 600px) {
   .activities {
@@ -927,15 +967,31 @@ nav a:hover {
   }
 
   .activity-part img {
-    width: 70vw;
+    max-width: 70vw;
   }
 
   .activity-part {
     width: 70vw;
   }
 
+  .events {
+    height: 250vh;
+  }
+
+  /* essai avec des tailles de grid fixées
+  .events {
+    /* grid-template-rows: 70px 40px 500px 30px 500px 3vh 500px 30px; Hauteurs des lignes */
+    /* grid-template-rows: 20vh 10vh 60vh 3vh 60vh 3vh 60vh 3vh;
+    gap: 1rem;
+    height: 240vh;
+  } */ 
+
   .event-part h4 {
     font-size: 1.2rem;
+  }
+
+  .link-right {
+    padding: 0;
   }
 
   .partners-logos ul {
@@ -944,12 +1000,12 @@ nav a:hover {
 }
 
 @media (max-width: 500px) {
-  #logo-gc-home {
-    height: 30vh;
-  }
-
   .presentation-container h1 {
     font-size: 1rem;
+  } 
+
+  .events {
+    height: 240vh;
   }
 }
 
@@ -958,30 +1014,19 @@ nav a:hover {
   .presentation {
     position: relative;
     height: 60vh;
-    padding-bottom: 1rem;
+    width: 100vw;
+    padding-bottom: 3rem;
   }
 
-.presentation-container {
-  justify-content: flex-end;
-  gap: 1.5rem;
-}
-
-  #logo-gc-home {
-    height: 20vh;
+  .presentation-container {
+    justify-content: flex-end;
+    gap: 1.5rem;
   }
 
   .presentation-container h1 {
+    text-align: center; 
     font-size: 0.8rem;
   }
-
-  .intro p {
-    font-size: 0.6rem;
-  }
-
-  .events {
-    gap: 0.5rem;
-    padding: 2rem 30px;
-    }  
 
   .news-left {
     width: 100%;
@@ -990,10 +1035,6 @@ nav a:hover {
 
   .news-right {
     align-items: center;
-    }
-
-  .link-right {
-    padding: 2rem 0 1rem 0;
   }
 
   .chevron-container {
