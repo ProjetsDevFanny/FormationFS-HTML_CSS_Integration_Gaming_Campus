@@ -851,6 +851,11 @@ bottom: 0;
 }
 
 @media (max-width: 690px) {
+
+  .presentation {
+    height: 65vh;
+  }
+
   .presentation-container h1 {
     font-size: 1rem;
   }
@@ -897,10 +902,10 @@ bottom: 0;
     justify-items: center;
     align-items: center;
     gap: 2rem;
-    max-height: 320vh;
+    max-height:280vh;
     padding: 2rem 30px;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px 70px 1fr 30px 1fr 30px;
     /* 6 lignes */
     grid-template-areas:
       "news"
@@ -974,9 +979,9 @@ bottom: 0;
     width: 70vw;
   }
 
-  .events {
+  /* .events {
     height: 250vh;
-  }
+  } */
 
   /* essai avec des tailles de grid fixées
   .events {
@@ -1003,10 +1008,10 @@ bottom: 0;
   .presentation-container h1 {
     font-size: 1rem;
   } 
-
+/* 
   .events {
     height: 240vh;
-  }
+  } */
 }
 
 /* Pour les très petits téléphones */
@@ -1031,6 +1036,10 @@ bottom: 0;
   .news-left {
     width: 100%;
     text-align: center;
+  }
+
+  .news-left h2 {   
+    font-size: 1.2rem;
   }
 
   .news-right {
