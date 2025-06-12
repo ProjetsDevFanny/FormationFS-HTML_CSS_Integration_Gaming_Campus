@@ -607,6 +607,7 @@ bottom: 0;
   font-weight: 700;
 }
 
+/* Aligner les logos de droite par rapport au texte de gauche :  */
 .press-right {
   display: flex;
   flex-direction: column;
@@ -617,7 +618,6 @@ bottom: 0;
 
 .press-right ul {
   display: flex;
-  flex-direction: row;
   align-items: center;
   gap: 1rem;
 }
@@ -679,6 +679,8 @@ bottom: 0;
 
 /* ========================== Médias queries ========================== */
 
+/* Viser les éléments comme ils ont été nommés dans le css */
+
 @media (max-width: 1200px) {
   nav {
     max-width: 100%;
@@ -712,8 +714,6 @@ bottom: 0;
     align-items: center;
   }
 }
-
-
 
 @media (max-width: 1095px) {
   .nav-link {
