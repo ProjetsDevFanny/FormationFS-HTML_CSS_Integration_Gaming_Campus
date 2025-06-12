@@ -10,7 +10,7 @@ Intégration d'une maquette professionnelle pour Gaming Campus en HTML et CSS.
 
 ### Version Mobile
 
-[Voir la version Galaxy](Screenshot-Galaxy A51_71.png)  
+![Voir la version Galaxy](Screenshot-Galaxy%20A51_71.png)
 
 ## Technologies Utilisées
 
