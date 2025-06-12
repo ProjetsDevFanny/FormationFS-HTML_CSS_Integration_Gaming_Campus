@@ -10,8 +10,7 @@ Intégration d'une maquette professionnelle pour Gaming Campus en HTML et CSS.
 
 ### Version Mobile
 
-[Voir la version GalaxyS8+](Screenshot-GalaxyS8-entier.png)  
-[Voir la version IPhoneSE](Screenshot-IPhoneSE.png)
+[Voir la version Galaxy](Screenshot-Galaxy A51_71.png)  
 
 ## Technologies Utilisées
 
